@@ -21,7 +21,6 @@ public class QuickSort {
         arr[end] = temp;
 
         return idx;
-
     }
 
     // QuickSort Function
