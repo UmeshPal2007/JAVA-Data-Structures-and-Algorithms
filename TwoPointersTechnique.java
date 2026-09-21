@@ -1,3 +1,3 @@
-public class TwoPointers {
+public class TwoPointersTechnique {
     
 }
