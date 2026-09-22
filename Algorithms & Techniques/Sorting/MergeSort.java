@@ -1,4 +1,3 @@
-package Sorting;
 class Solution {
     public static void mergeSort(int arr[], int st, int end) { // MergeSort (Recursive Function) divides the array into smaller sub-problems.
         if (st < end) { // Base Condition : Ensures recursion stops when a subarray has a length of 1 or 0 (which is naturally sorted).
