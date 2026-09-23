@@ -259,5 +259,3 @@ Just-In-Time (JIT) Compiler: Identifies "hot" (frequently used) code and compile
 5. Garbage Collection & Termination
 Memory Management: The Garbage Collector automatically identifies and removes objects no longer in use to free up heap memory.
 Exit: The program terminates once all non-daemon threads finish or a manual exit command (like System.exit()) is called.
-
-## Operators
