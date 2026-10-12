@@ -5,35 +5,38 @@
 
 class Solution {
     public int search(int[] nums, int target) {
-        int start = 0; // Start Pointer points at the first index
-        int end = nums.length - 1; // End pointer points at the last valid index.
+        int start = 0; // 📍 Pointer at start
+        int end = nums.length - 1; // 📍 Pointer at end
 
         // As long as (start <= end) there are still elements to examine. When (start > end), The search range is empty And the target was not found.
-        while (start <= end) {
-            int mid = start + (end - start) / 2; // Calculating the middle index of the current search range.
 
-            // If the middle element equals to the Target, we've found the answer. Return
-            // its Index immediately.
-            if (nums[mid] == target) {
+        while (start <= end) { // 🎯 Find middle index
+            int mid = start + (end - start) / 2;
+
+            if (nums[mid] == target) { // If the middle element equals to the Target. 🎉 Target found!.
                 return mid;
             }
 
-            // If nums[start] <= nums[mid] then the left Half is sorted.
+            // 🔍 Check if the left half is sorted
             if (nums[start] <= nums[mid]) {
+                // Check if target lies within the sorted left half
                 if (nums[start] <= target && target < nums[mid]) {
-                    end = mid - 1;
+                    end = mid - 1; //⬅️ Search left
                 } else {
-                    start = mid + 1;
+                    start = mid + 1; // ➡️ Search right
                 }
-            } else {
+            } 
+            // Otherwise, the right half must be sorted
+            else {
+                // Check if target lies within the sorted right half
                 if (nums[mid] < target && target <= nums[end]) {
-                    start = mid + 1;
+                    start = mid + 1; // ➡️ Search right
                 } else {
-                    end = mid - 1;
+                    end = mid - 1; // ⬅️ Search left
                 }
             }
         }
-        return -1;
+        return -1; // ❌ Target not found
     }
 }
 
