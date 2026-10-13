@@ -1,4 +1,4 @@
-// LeetCode 33. Search in Rotated Sorted Array
+// LeetCode 33 : Search in Rotated Sorted Array
 // BINARY SEARCH ALGORITHM is a searching algorithm that operates on a sorted Or monotonic search space, repeatedly dividing it into halves to find a target value or optimal answer in logarithmic time O(log N).
 // You are given an integer array nums with distinct elements sorted in ascending order And then rotated. The Array was originally sorted but then rotated at some pivot. You must return the index of target, or -1 if the target doesn't exist.
 // Important observation is that on every Binary search step at least one half of the current search range is sorted.
