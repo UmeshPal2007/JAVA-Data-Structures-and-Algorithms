@@ -1,9 +1,16 @@
 // LEETCODE 53 : Maximum Subarray Sum using Kadane's Algorithm
+//The maximum subarray problem is the task of finding a contiguous (unbroken) part of a one-dimensional array of numbers that has the largest possible sum.
 
-//You are given an integer array nums.
-// Your task is to find a non empty contiguous subarray that has the largest possible sum and return that sum.
-// Sub-array is a contiguous portion of an array. Contiguous means the elements must be next to each other. You cannot skip elements.
-// Among all possible contiguous subarrays, you have to find the one whose sum is greatest.
+// Kadane’s Algorithm (Optimal Approach)
+// • How it works: Traverse the array from left to right while keeping a running sum (currentSum). At each element, choose whether to:
+// • Extend the existing subarray by adding the current number to currentSum.
+// • Start a fresh subarray from the current number if currentSum drops below zero (since a negative sum hurts future totals).
+// • Track the highest sum seen so far in a maxSum variable.
+
+// Brute Force (Naïve Approach)
+// • How it works: Use nested loops to generate every possible start and end point, calculate the sum for each subarray, and find the maximum.
+// • Time Complexity: O(n²) (or O(n³) if recalculating sums from scratch)
+// • Space Complexity: O(1)
 
 class Solution {
     public int maxSubArray(int[] nums) {
@@ -23,4 +30,5 @@ class Solution {
     }
 }
 
-// Time: O(n) | Space: O(1)
+// • Time Complexity: O(n)
+// • Space Complexity: O(1)
