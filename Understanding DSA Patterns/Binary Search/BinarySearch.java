@@ -1,6 +1,6 @@
 public class BinarySearch {
 
-    // Iterative Approach
+    // ============================================ Iterative Approach ===================================================
     public static int binarySearch(int[] arr, int tar) {
         int st = 0, end = arr.length - 1;
 
@@ -18,7 +18,7 @@ public class BinarySearch {
         return -1;
     }
 
-    // Recursive Approach
+    // ============================================ Recursive Approach ===================================================
     public static int recBinarySearch(int[] arr, int tar, int st, int end) {
         if (st <= end) {
             int mid = st + (end - st) / 2;
@@ -34,7 +34,7 @@ public class BinarySearch {
         return -1;
     }
 
-    // Driver Function
+    // =========================== Driver Function ===========================
     public static void main(String[] args) {
         int[] arr = { 2, 3, 4, 10, 40 };
         int tar = 10;
