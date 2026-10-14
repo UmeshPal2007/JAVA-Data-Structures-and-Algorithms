@@ -38,3 +38,5 @@ class Twosum {
         System.out.println("Indices of two Numbers whose sum is equals to the Target " + Arrays.toString(result));
     }
 }
+
+//  Pair Sum and Two Sum refer to the exact same core algorithmic problem.
