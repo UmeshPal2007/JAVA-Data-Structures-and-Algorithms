@@ -52,7 +52,7 @@ Rehashing is needed to prevent collision and maintain efficiency.
 
 ## 2. `HashSet` in Java
 
-### Key points
+### Key pointsg 
 
 -   `HashSet` is part of the Java Collections Framework and implements
     the `Set` interface.
@@ -72,7 +72,6 @@ Rehashing is needed to prevent collision and maintain efficiency.
     resizing.
 -   Default initial capacity of a Hashset: **16**.
 -   Default load factor: **0.75**.
--   Initial resize threshold: `16 × 0.75 = 12`.
 -   When the threshold is exceeded, the table generally grows to about
     twice its previous capacity.
 
@@ -89,8 +88,7 @@ Rehashing is needed to prevent collision and maintain efficiency.
   `HashSet<>(int initialCapacity, float loadFactor)`   When capacity and load factor need
                                                        to be specified
 
-  `HashSet<>(Collection<? extends E> c)`               Create a set from an existing
-                                                       collection; duplicates are removed
+  `HashSet<>(Collection<? extends E> c)`               Best for Filtering Existing Data.
   ----------------------------------------------------------------------------------------
 
 ### Example: creating and using a `HashSet`
@@ -100,9 +98,9 @@ import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        HashSet<Integer> hs = new HashSet<>();
+        HashSet<Integer> hs = new HashSet<>(); //Creating an HashSet
 
-        hs.add(1);
+        hs.add(1); //Adding Elements
         hs.add(2);
 
         System.out.println("HashSet size: " + hs.size());
@@ -143,7 +141,7 @@ element is already present.
 -   It does **not guarantee insertion order** or sorted order.
 -   It is **not thread-safe** by default.
 -   Average-case `put()`, `get()`, and `remove()` operations are
-    generally O(1).
+    generally O(1) Constant Time Complexity which is really good for a data structure. 
 
 ### Common methods
 
@@ -160,12 +158,12 @@ element is already present.
   `containsKey(key)`                  Checks whether a key exists;
                                       returns a boolean
 
-  `remove(key)`                       Removes the mapping for a key
+  `remove(key)`                       Removes the mapping (Delete the Key-Value Pair) for a key
 
   `size()`                            Returns the number of key-value
                                       mappings
 
-  `keySet()`                          Returns a `Set` containing all keys
+  `keySet()`                          Returns a `Set` containing all keys in Map
 
   `entrySet()`                        Returns a set of key-value entries,
                                       useful for iteration
@@ -184,7 +182,7 @@ public class JavaHashMap {
 
         // Add key-value pairs
         hashMap.put("John", 25);
-        hashMap.put("John", 35);
+        hashMap.put("Jon", 35);
 
         // Iterate through the HashMap
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
@@ -194,16 +192,11 @@ public class JavaHashMap {
 }
 ```
 
-**Important:** The second `put("John", 35)` replaces the previous value
-`25`, because a `HashMap` cannot contain duplicate keys. The map
-therefore has one mapping for `"John"`.
-
 ### Capacity and load factor
 
 -   Default initial capacity: **16**.
 -   Default load factor: **0.75**.
--   The resize threshold is initially `capacity × load factor`, or
-    `16 × 0.75 = 12`.
+-   When 75% of the capacity is filled then the capacity is Doubled.
 -   When the number of entries exceeds the threshold, the table resizes
     and entries are redistributed.
 
@@ -258,29 +251,6 @@ A simplified entry/node contains:
     expected to be faster.
 
 ------------------------------------------------------------------------
-
-## 5. `HashSet` vs. `HashMap`
-
-  -----------------------------------------------------------------------
-  Feature                 `HashSet`               `HashMap`
-  ----------------------- ----------------------- -----------------------
-  Stores                  Unique elements         Key-value pairs
-
-  Uniqueness              Elements are unique     Keys are unique; values
-                                                  may repeat
-
-  Duplicate insertion     Duplicate element is    Existing key's value is
-                          not added               replaced
-
-  Null support            One `null` element      One `null` key and
-                                                  multiple `null` values
-
-  Main interface          `Set`                   `Map`
-
-  Internal implementation Backed by a `HashMap`   Hash table of entries
-
-  Order                   No guaranteed order     No guaranteed order
-  -----------------------------------------------------------------------
 
 ## 6. Quick revision
 
